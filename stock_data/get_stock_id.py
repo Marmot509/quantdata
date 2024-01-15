@@ -1,20 +1,32 @@
-### 从分钟数据的文件名中提取股票列表
-
 import os
 import json
 
-def get_stock_id(path):
-    stock_id = [''.join(filter(str.isdigit, f)) for f in os.listdir(path) if f.endswith('.csv')]
-    stock_id_sorted = sorted(stock_id)
-    return stock_id_sorted
+# Define the updated function to modify the filenames as required
+def get_stock_id_with_prefix(path):
+    stock_ids = []
+    for f in os.listdir(path):
+        if f.endswith('.csv'):
+            # Extract numeric part
+            numeric_part = ''.join(filter(str.isdigit, f))
+            # Extract the letter part (.SZ or .SH), convert to lowercase and prepend to the numeric part
+            letter_part = f.split('.')[1].lower()
+            stock_id = letter_part + numeric_part
+            stock_ids.append(stock_id)
+    # Sort the list of IDs
+    return sorted(stock_ids)
 
-# 分钟数据的文件夹路径
-path_to_folder = 'data/2024/'
+# Replace 'path_to_folder' with the actual path to your folder containing the CSV files
+path_to_folder = 'data/2024'
 
-stock_ids_sorted = get_stock_id(path_to_folder)
+# Get the modified stock ids
+stock_ids_with_prefix = get_stock_id_with_prefix(path_to_folder)
 
-# 目标JSON文件路径
+# Convert the list of modified stock ids to JSON format
+json_content = json.dumps(stock_ids_with_prefix, indent=4)
+
+# Replace 'path_to_json_file' with the actual path where you want to save the JSON file
 path_to_json_file = 'stock_id.json'
 
+# Write the JSON content to a file
 with open(path_to_json_file, 'w') as json_file:
-    json.dump(stock_ids_sorted, json_file, indent=4)
+    json_file.write(json_content)
