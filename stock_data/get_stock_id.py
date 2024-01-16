@@ -25,7 +25,7 @@ stock_ids_with_prefix = get_stock_id_with_prefix(path_to_folder)
 json_content = json.dumps(stock_ids_with_prefix, indent=4)
 
 # Replace 'path_to_json_file' with the actual path where you want to save the JSON file
-path_to_json_file = 'stock_id.json'
+path_to_json_file = 'ticker.json'
 
 # Write the JSON content to a file
 with open(path_to_json_file, 'w') as json_file:
