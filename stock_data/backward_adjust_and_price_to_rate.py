@@ -38,19 +38,25 @@ for stock_code in stock_prices.columns[1:]:  # 跳过交易时间列
         axis=1
     )
 
+    print(stock_code + ' done')
+
 adjusted_prices.set_index('trade_time', inplace=True)
 
 # 将后复权价格DataFrame保存为CSV文件
 adjusted_prices.to_csv('stock_prices_hfq.csv', index=True)
+print('stock_prices_hfq.csv saved')
 
 # 计算收益率
 returns = adjusted_prices.pct_change()
+print('returns calculated')
 
 # 移除收益率DataFrame中的第一行，因为它将会是NaN（第一个点没有前一个点来计算收益率）
 returns = returns.iloc[1:]
 
 # 将收益率DataFrame保存为CSV文件
 returns.to_csv('stock_returns.csv', index=True)
+print('stock_returns.csv saved')
 
 # 将收益率DataFrame保存为序列化的二进制文件（Pickle格式）
 returns.to_pickle('stock_returns.pkl')
+print('stock_returns.pkl saved')
