@@ -161,6 +161,14 @@ cython_debug/
 
 stock_data/data/stocks/*.csv
 stock_data/data/2024/*.csv
-stock_data/data/merged_data.csv
+
 stock_data/*.csv
 stock_data/*.zip
+
+stock_data/data/stock_returns.csv
+stock_data/data/merged_data.csv
+stock_data/data/*.zip
+
+stock_data/data/stocks/*.csv
+stock_data/data/2024/*.csv
+stock_data/data/*/*.zip
