@@ -170,6 +170,7 @@ stock_data/data/merged_data.csv
 stock_data/data/adjusted_return.csv
 stock_data/data/stock_returns_test.csv
 stock_data/data/*.zip
+stock_data/data/*.pkl
 
 stock_data/data/stocks_daily/*.csv
 
