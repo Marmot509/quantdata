@@ -176,4 +176,5 @@ stock_data/data/stocks_daily/*.csv
 
 stock_data/data/stocks/*.csv
 stock_data/data/2024/*.csv
+stock_data/data/stocks_daily_data/*.*
 stock_data/data/*/*.zip
