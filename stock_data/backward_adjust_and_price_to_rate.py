@@ -1,4 +1,4 @@
-import pandas
+import pandas as pd
 
 # 假设股票价格数据的文件路径
 stock_prices_path = 'merged_data.csv'
