@@ -2,9 +2,9 @@ import pandas as pd
 from tqdm import tqdm
 
 # 假设股票价格数据的文件路径
-stock_prices_path = 'merged_data.csv'
+stock_prices_path = 'data/merged_data.csv'
 # 假设后复权因子文件夹的路径
-adjust_factor_path = 'backward_adjust_factor/'
+adjust_factor_path = 'data/backward_adjust_factor/'
 
 # 分块大小
 chunksize = 10**5  # 根据您的内存调整
@@ -56,8 +56,8 @@ with tqdm(total=total_chunks, desc="Processing chunks") as pbar:
 adjusted_prices.set_index('trade_time', inplace=True)
 
 # 保存结果
-adjusted_prices.to_csv('stock_prices_hfq.csv', index=True)
-print('stock_prices_hfq.csv saved')
+adjusted_prices.to_csv('data/stock_prices_hfq.csv', index=True)
+print('data/stock_prices_hfq.csv saved')
 
 # 计算收益率
 returns = adjusted_prices.pct_change()
@@ -67,9 +67,9 @@ print('returns calculated')
 returns = returns.iloc[1:]
 
 # 将收益率DataFrame保存为CSV文件
-returns.to_csv('stock_returns.csv', index=True)
-print('stock_returns.csv saved')
+returns.to_csv('data/stock_returns.csv', index=True)
+print('data/stock_returns.csv saved')
 
 # 将收益率DataFrame保存为序列化的二进制文件（Pickle格式）
-returns.to_pickle('stock_returns.pkl')
-print('stock_returns.pkl saved')
+returns.to_pickle('data/stock_returns.pkl')
+print('data/stock_returns.pkl saved')
