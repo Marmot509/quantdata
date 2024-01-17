@@ -3,9 +3,9 @@ import pandas as pd
 import json
 
 # 路径设置
-json_file = 'stock_data/top_market_cap_stocks.json'
-data_dir = 'stock_data/data/'
-merged_dir = os.path.join(data_dir, 'merged/')
+json_file = 'data/top_market_cap_stocks.json'
+data_dir = 'data/stocks'
+merged_dir = os.path.join(data_dir, 'data/merged/')
 if not os.path.exists(merged_dir):
     os.makedirs(merged_dir)
 

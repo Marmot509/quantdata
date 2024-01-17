@@ -20,6 +20,6 @@ def merge_csv_files(folder_path, output_file):
     merged_data.to_csv(output_file, index=False)
 
 # 使用方法
-folder_path = 'data/'  # 替换为您的文件夹路径
-output_file = 'merged_data.csv'  # 您希望保存的文件名
+folder_path = 'data/stocks'  # 替换为您的文件夹路径
+output_file = 'data/merged_data.csv'  # 您希望保存的文件名
 merge_csv_files(folder_path, output_file)
