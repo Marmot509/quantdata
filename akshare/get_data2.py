@@ -24,11 +24,13 @@ from datetime import datetime, timedelta
 # forex_rate = ak.currency_boc_safe()
 # forex_rate.to_csv("forex_rate.csv", index=False)
 
-# 获取Shibor利率
-shibor_on = ak.rate_interbank(market="上海银行同业拆借市场", symbol="Shibor人民币", indicator="隔夜")
-shibor_on.to_csv("shibor_on.csv", index=False)
-shibor_3m = ak.rate_interbank(market="上海银行同业拆借市场", symbol="Shibor人民币", indicator="3月")
-shibor_3m.to_csv("shibor_3m.csv", index=False)
-shibor_1y = ak.rate_interbank(market="上海银行同业拆借市场", symbol="Shibor人民币", indicator="1年")
-shibor_1y.to_csv("shibor_1y.csv", index=False)
+# # 获取Shibor利率
+# shibor_on = ak.rate_interbank(market="上海银行同业拆借市场", symbol="Shibor人民币", indicator="隔夜")
+# shibor_on.to_csv("shibor_on.csv", index=False)
+# shibor_3m = ak.rate_interbank(market="上海银行同业拆借市场", symbol="Shibor人民币", indicator="3月")
+# shibor_3m.to_csv("shibor_3m.csv", index=False)
+# shibor_1y = ak.rate_interbank(market="上海银行同业拆借市场", symbol="Shibor人民币", indicator="1年")
+# shibor_1y.to_csv("shibor_1y.csv", index=False)
+
+
 

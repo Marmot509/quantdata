@@ -161,3 +161,4 @@ cython_debug/
 
 stock_data/data/*/*.csv
 stock_data/data/*.csv
+stock_data/*.csv
