@@ -16,16 +16,20 @@ import pandas as pd
 # sh_margin.to_csv("sh_margin.csv", index=False)
 
 # 深交所融资融券余额
-csv_data = pd.read_csv("sh_margin.csv")
-dates = csv_data['信用交易日期'].astype(str)
+# csv_data = pd.read_csv("akshare_data/sh_margin.csv")
+# dates = csv_data['信用交易日期'].astype(str)
 
-all_data = pd.DataFrame()
-for date in dates:
-    formatted_date = pd.to_datetime(date).strftime('%Y%m%d')
-    daily_data = ak.stock_margin_szse(date=formatted_date)
-    all_data = pd.concat([all_data, daily_data])
-    print(formatted_date, 'done')
+# all_data = []
+# for date in dates:
+#     try:
+#         formatted_date = pd.to_datetime(date).strftime('%Y%m%d')
+#         daily_data = ak.stock_margin_szse(date=formatted_date)
+#         all_data.append(daily_data)
+#         print(formatted_date, 'done')
+#     except Exception as e:
+#         print(f"Error getting data for date {formatted_date}: {e}")
 
-all_data.to_csv("all_data.csv", index=False)
+# all_data_df = pd.concat(all_data)
+# all_data_df.to_csv("akshare_data/sz_margin.csv", index=False)
 
 

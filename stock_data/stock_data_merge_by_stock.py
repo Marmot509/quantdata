@@ -33,6 +33,10 @@ for ticker in tickers:
         # 合并数据
         merged_data = pd.concat(all_data)
         # 按交易时间排序
+
+
+
+        
         merged_data.sort_values(by='trade_time', inplace=True)
         # 保存到merged文件夹
         merged_data.to_csv(os.path.join(merged_dir, f"{ticker}.csv"), index=False)
