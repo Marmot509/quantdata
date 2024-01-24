@@ -1,0 +1,5 @@
+pandas
+akshare
+tqdm
+numpy
+scipy
