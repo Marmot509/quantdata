@@ -3,3 +3,5 @@ akshare
 tqdm
 numpy
 scipy
+matpoltlab
+fastparquet
